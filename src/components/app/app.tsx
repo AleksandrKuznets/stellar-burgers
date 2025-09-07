@@ -19,9 +19,8 @@ import { AppHeader, IngredientDetails, Modal, OrderInfo } from '@components';
 import { getIngredientsList } from '@slices/ingredients';
 import { getUserData, getUserName } from '@slices/user';
 
-import { useDispatch } from '@services/store';
+import { useDispatch, useSelector } from '@services/store';
 import { useEffect } from 'react';
-import { useSelector } from 'react-redux';
 import { Route, Routes, useLocation, useNavigate } from 'react-router-dom';
 import { ProtectedRoute } from '../protected-route/protected-route';
 
@@ -38,6 +37,8 @@ const App = () => {
       dispatch(getUserData());
     }
   }, []);
+
+  const handleModalClose = () => navigate(-1);
 
   return (
     <div className={styles.app}>
@@ -113,7 +114,7 @@ const App = () => {
           <Route
             path='/feed/:number'
             element={
-              <Modal title='' onClose={() => navigate(-1)}>
+              <Modal title='' onClose={handleModalClose}>
                 <OrderInfo showHeader />
               </Modal>
             }
@@ -121,7 +122,7 @@ const App = () => {
           <Route
             path='/ingredients/:id'
             element={
-              <Modal title='Детали ингридиента' onClose={() => navigate(-1)}>
+              <Modal title='Детали ингридиента' onClose={handleModalClose}>
                 <IngredientDetails showHeader={false} />
               </Modal>
             }
@@ -130,7 +131,7 @@ const App = () => {
             path='/profile/orders/:number'
             element={
               <ProtectedRoute>
-                <Modal title='' onClose={() => navigate(-1)}>
+                <Modal title='' onClose={handleModalClose}>
                   <OrderInfo showHeader={false} />
                 </Modal>
               </ProtectedRoute>
