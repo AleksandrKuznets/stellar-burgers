@@ -1,5 +1,5 @@
-import { OrderInfoUI } from '@ui';
 import type { Meta, StoryObj } from '@storybook/react';
+import { OrderInfoUI } from '@ui';
 
 const meta = {
   title: 'Example/OrderInfo',
@@ -17,6 +17,7 @@ type Story = StoryObj<typeof meta>;
 
 export const DefaultOrderInfo: Story = {
   args: {
+    showHeader: true,
     orderInfo: {
       ingredientsInfo: {
         bun: {
