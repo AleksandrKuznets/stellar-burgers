@@ -1,5 +1,5 @@
 import { useSelector } from '@services/store';
-import { getUser, isAuthCheckedSelector } from '@slices/user';
+import { isAuthCheckedSelector } from '@slices/user';
 import { Preloader } from '@ui';
 import React from 'react';
 import { Navigate, useLocation } from 'react-router-dom';
@@ -14,7 +14,6 @@ export const ProtectedRoute = ({
   children
 }: ProtectedRouteProps) => {
   const isAuthChecked = useSelector(isAuthCheckedSelector);
-  const user = useSelector(getUser);
   const isLoading = useSelector((state) => state.user.isLoading);
   const location = useLocation();
 
