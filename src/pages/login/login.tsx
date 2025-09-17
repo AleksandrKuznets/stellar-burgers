@@ -1,5 +1,5 @@
-import { useDispatch, useSelector } from '@services/store';
-import { getError, loginUser } from '@slices/user';
+import { useDispatch, useSelector } from '@services/store/store';
+import { getError, loginUser } from '@slices/user/user';
 import { LoginUI } from '@ui-pages';
 import { FC, SyntheticEvent, useState } from 'react';
 

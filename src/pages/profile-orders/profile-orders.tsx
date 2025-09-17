@@ -1,5 +1,5 @@
-import { useDispatch, useSelector } from '@services/store';
-import { getUserOrders, userOrdersList } from '@slices/userOrders';
+import { useDispatch, useSelector } from '@services/store/store';
+import { getUserOrders, userOrdersList } from '@slices/userOrders/userOrders';
 import { ProfileOrdersUI } from '@ui-pages';
 import { TOrder } from '@utils-types';
 import { FC, useEffect } from 'react';

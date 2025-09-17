@@ -1,5 +1,5 @@
-import { useDispatch } from '@services/store';
-import { logoutUser } from '@slices/user';
+import { useDispatch } from '@services/store/store';
+import { logoutUser } from '@slices/user/user';
 import { ProfileMenuUI } from '@ui';
 import { FC } from 'react';
 import { useLocation } from 'react-router-dom';

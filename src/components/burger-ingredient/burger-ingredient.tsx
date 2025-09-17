@@ -2,8 +2,8 @@ import { FC, memo } from 'react';
 import { useLocation } from 'react-router-dom';
 import { v4 as generatedId } from 'uuid';
 
-import { useDispatch } from '@services/store';
-import { addItem } from '@slices/constructor';
+import { useDispatch } from '@services/store/store';
+import { addItem } from '@slices/constructor/constructor';
 import { BurgerIngredientUI } from '@ui';
 import { TBurgerIngredientProps } from './type';
 

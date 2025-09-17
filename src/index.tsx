@@ -1,4 +1,4 @@
-import store from '@services/store';
+import store from '@services/store/store';
 import React from 'react';
 import * as ReactDOMClient from 'react-dom/client';
 import { Provider } from 'react-redux';

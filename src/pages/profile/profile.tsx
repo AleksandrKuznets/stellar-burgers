@@ -1,5 +1,5 @@
-import { useDispatch, useSelector } from '@services/store';
-import { getUser, updateUser } from '@slices/user';
+import { useDispatch, useSelector } from '@services/store/store';
+import { getUser, updateUser } from '@slices/user/user';
 import { ProfileUI } from '@ui-pages';
 import { FC, SyntheticEvent, useEffect, useState } from 'react';
 
