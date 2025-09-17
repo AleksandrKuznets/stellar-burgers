@@ -13,7 +13,7 @@ type TNewOrderState = {
   error: string | undefined;
 };
 
-const initialState: TNewOrderState = {
+export const initialState: TNewOrderState = {
   orderRequest: false,
   orderModalData: null,
   error: undefined
@@ -34,12 +34,17 @@ export const createOrderSlice = createSlice({
       .addCase(createOrder.fulfilled, (state, action) => {
         state.orderRequest = false;
         state.orderModalData = action.payload.order;
+        state.error = undefined;
       })
       .addCase(createOrder.rejected, (state, action) => {
-        state.error = action.error.message;
+        state.orderRequest = false;
+        state.orderModalData = null;
+        state.error = action.error?.message;
       })
       .addCase(createOrder.pending, (state) => {
         state.orderRequest = true;
+        state.error = undefined;
+        state.orderModalData = null;
       });
   }
 });

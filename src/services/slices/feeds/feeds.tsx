@@ -12,7 +12,7 @@ type TFeedsState = {
   error: string | undefined;
 };
 
-const initialState: TFeedsState = {
+export const initialState: TFeedsState = {
   orders: [],
   total: 0,
   totalToday: 0,
@@ -43,7 +43,7 @@ export const feedsSlice = createSlice({
         state.total = 0;
         state.totalToday = 0;
         state.isLoading = false;
-        state.error = action.error.message;
+        state.error = action.error?.message;
       })
       .addCase(getAllFeeds.pending, (state) => {
         state.isLoading = true;
