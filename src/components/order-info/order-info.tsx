@@ -1,11 +1,11 @@
-import { useDispatch, useSelector } from '@services/store';
-import { getOrdersFeeds } from '@slices/feeds';
-import { getIngredients } from '@slices/ingredients';
+import { useDispatch, useSelector } from '@services/store/store';
+import { getOrdersFeeds } from '@slices/feeds/feeds';
+import { getIngredients } from '@slices/ingredients/ingredients';
 import {
   getUserOrderByNumber,
   userOrdersByNumber,
   userOrdersList
-} from '@slices/userOrders';
+} from '@slices/userOrders/userOrders';
 import { OrderInfoUI, Preloader } from '@ui';
 import { TIngredient, TOrder } from '@utils-types';
 import { FC, useEffect, useMemo } from 'react';

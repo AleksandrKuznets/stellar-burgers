@@ -1,8 +1,8 @@
 import { FC, useEffect, useMemo, useRef, useState } from 'react';
 import { useInView } from 'react-intersection-observer';
 
-import { useSelector } from '@services/store';
-import { getIngredientsState } from '@slices/ingredients';
+import { useSelector } from '@services/store/store';
+import { getIngredientsState } from '@slices/ingredients/ingredients';
 import { BurgerIngredientsUI } from '@ui';
 import { TTabMode } from '@utils-types';
 

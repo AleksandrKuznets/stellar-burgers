@@ -1,5 +1,9 @@
-import { useDispatch, useSelector } from '@services/store';
-import { deleteItem, selectItems, updateAll } from '@slices/constructor';
+import { useDispatch, useSelector } from '@services/store/store';
+import {
+  deleteItem,
+  selectItems,
+  updateAll
+} from '@slices/constructor/constructor';
 import { BurgerConstructorElementUI } from '@ui';
 import { TConstructorIngredient } from '@utils-types';
 import { FC, memo } from 'react';

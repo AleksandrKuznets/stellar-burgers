@@ -1,11 +1,11 @@
 import { FC } from 'react';
 
-import { useSelector } from '@services/store';
+import { useSelector } from '@services/store/store';
 import {
   getOrdersFeeds,
   getTotalFeeds,
   getTotalTodayFeeds
-} from '@slices/feeds';
+} from '@slices/feeds/feeds';
 import { FeedInfoUI } from '@ui';
 import { TOrder } from '@utils-types';
 

@@ -1,5 +1,5 @@
-import { useSelector } from '@services/store';
-import { getIngredientsState } from '@slices/ingredients';
+import { useSelector } from '@services/store/store';
+import { getIngredientsState } from '@slices/ingredients/ingredients';
 import { IngredientDetailsUI, Preloader } from '@ui';
 import { FC } from 'react';
 import { useParams } from 'react-router-dom';

@@ -24,7 +24,7 @@ type TUserState = {
   isLoading: boolean;
 };
 
-const initialState: TUserState = {
+export const initialState: TUserState = {
   isAuthChecked: false,
   user: { email: '', name: '' },
   error: '',
@@ -72,7 +72,7 @@ export const userSlice = createSlice({
           logoutUser.rejected
         ),
         (state, action) => {
-          state.error = action.error.message;
+          state.error = action.error?.message || '';
           state.isLoading = false;
         }
       )

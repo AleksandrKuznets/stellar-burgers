@@ -1,6 +1,6 @@
 import { TRegisterData } from '@api';
-import { useDispatch, useSelector } from '@services/store';
-import { getError, registerUser } from '@slices/user';
+import { useDispatch, useSelector } from '@services/store/store';
+import { getError, registerUser } from '@slices/user/user';
 import { RegisterUI } from '@ui-pages';
 import { FC, SyntheticEvent, useState } from 'react';
 

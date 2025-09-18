@@ -1,8 +1,8 @@
-import { useSelector } from '@services/store';
-import { selectItems } from '@slices/constructor';
+import { useSelector } from '@services/store/store';
+import { selectItems } from '@slices/constructor/constructor';
 import { TIngredient } from '@utils-types';
 import { forwardRef, useMemo } from 'react';
-import { IngredientsCategoryUI } from '../ui/ingredients-category';
+import { IngredientsCategoryUI } from '@ui';
 import { TIngredientsCategoryProps } from './type';
 
 export const IngredientsCategory = forwardRef<

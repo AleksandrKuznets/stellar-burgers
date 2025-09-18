@@ -1,12 +1,12 @@
-import { useDispatch, useSelector } from '@services/store';
-import { clearAll, selectItems } from '@slices/constructor';
+import { useDispatch, useSelector } from '@services/store/store';
+import { clearAll, selectItems } from '@slices/constructor/constructor';
 import {
   createOrder,
   getOrderModalData,
   getOrderRequest,
   resetOrder
-} from '@slices/newOrder';
-import { isAuthCheckedSelector } from '@slices/user';
+} from '@slices/newOrder/newOrder';
+import { isAuthCheckedSelector } from '@slices/user/user';
 import { BurgerConstructorUI } from '@ui';
 import { TConstructorIngredient } from '@utils-types';
 import { FC, useEffect, useMemo } from 'react';

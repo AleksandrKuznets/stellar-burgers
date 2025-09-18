@@ -16,10 +16,10 @@ import { getCookie } from '../../utils/cookie';
 
 import { AppHeader, IngredientDetails, Modal, OrderInfo } from '@components';
 
-import { getIngredientsList } from '@slices/ingredients';
-import { getUserData, getUserName } from '@slices/user';
+import { getIngredientsList } from '@slices/ingredients/ingredients';
+import { getUserData, getUserName } from '@slices/user/user';
 
-import { useDispatch, useSelector } from '@services/store';
+import { useDispatch, useSelector } from '@services/store/store';
 import { useEffect } from 'react';
 import { Route, Routes, useLocation, useNavigate } from 'react-router-dom';
 import { ProtectedRoute } from '../protected-route/protected-route';

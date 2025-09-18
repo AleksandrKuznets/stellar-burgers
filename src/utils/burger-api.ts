@@ -67,10 +67,6 @@ type TFeedsResponse = TServerResponse<{
   totalToday: number;
 }>;
 
-type TOrdersResponse = TServerResponse<{
-  data: TOrder[];
-}>;
-
 export const getIngredientsApi = () =>
   fetch(`${URL}/ingredients`)
     .then((res) => checkResponse<TIngredientsResponse>(res))
@@ -184,6 +180,14 @@ export const loginUserApi = (data: TLoginData) =>
       return Promise.reject(data);
     });
 
+type TForgotPasswordResponse = TServerResponse<{
+  message: string;
+}>;
+
+type TResetPasswordResponse = TServerResponse<{
+  message: string;
+}>;
+
 export const forgotPasswordApi = (data: { email: string }) =>
   fetch(`${URL}/password-reset`, {
     method: 'POST',
@@ -192,7 +196,7 @@ export const forgotPasswordApi = (data: { email: string }) =>
     },
     body: JSON.stringify(data)
   })
-    .then((res) => checkResponse<TServerResponse<{}>>(res))
+    .then((res) => checkResponse<TForgotPasswordResponse>(res))
     .then((data) => {
       if (data?.success) return data;
       return Promise.reject(data);
@@ -206,7 +210,7 @@ export const resetPasswordApi = (data: { password: string; token: string }) =>
     },
     body: JSON.stringify(data)
   })
-    .then((res) => checkResponse<TServerResponse<{}>>(res))
+    .then((res) => checkResponse<TResetPasswordResponse>(res))
     .then((data) => {
       if (data?.success) return data;
       return Promise.reject(data);
@@ -231,6 +235,10 @@ export const updateUserApi = (user: Partial<TRegisterData>) =>
     body: JSON.stringify(user)
   });
 
+type TLogoutResponse = TServerResponse<{
+  message: string;
+}>;
+
 export const logoutApi = () =>
   fetch(`${URL}/auth/logout`, {
     method: 'POST',
@@ -243,5 +251,5 @@ export const logoutApi = () =>
   }).then((res) => {
     localStorage.removeItem('refreshToken');
     deleteCookie('accessToken');
-    return checkResponse<TServerResponse<{}>>(res);
+    return checkResponse<TLogoutResponse>(res);
   });
